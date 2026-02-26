@@ -1,11 +1,15 @@
 package com.binayak.ecomm_backend.payload;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @Getter
@@ -26,4 +30,9 @@ public class UserDto {
     @Size(min = 4, message = "minimum size is 4 characters")
     private String password;
 
+    private String address;
+
+    private String age;
+
+    private Set<RoleDto> roles = new HashSet<>();
 }
